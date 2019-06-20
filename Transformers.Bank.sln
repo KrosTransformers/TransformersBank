@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformers.Bank.Entities"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformers.Bank.App", "Transformers.Bank.App\Transformers.Bank.App.csproj", "{560D71AF-2F39-4C86-BA68-4CDEA810AFCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformers.Bank.Core", "Transformers.Bank.Core\Transformers.Bank.Core.csproj", "{9D76AC61-5438-4C09-8D36-C84A85D2F56A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformers.Bank.WebApi", "Transformers.Bank.WebApi\Transformers.Bank.WebApi.csproj", "{5959BD7B-E42F-449C-B824-C1BCAB0606DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{560D71AF-2F39-4C86-BA68-4CDEA810AFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{560D71AF-2F39-4C86-BA68-4CDEA810AFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{560D71AF-2F39-4C86-BA68-4CDEA810AFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D76AC61-5438-4C09-8D36-C84A85D2F56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D76AC61-5438-4C09-8D36-C84A85D2F56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D76AC61-5438-4C09-8D36-C84A85D2F56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D76AC61-5438-4C09-8D36-C84A85D2F56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5959BD7B-E42F-449C-B824-C1BCAB0606DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5959BD7B-E42F-449C-B824-C1BCAB0606DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5959BD7B-E42F-449C-B824-C1BCAB0606DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5959BD7B-E42F-449C-B824-C1BCAB0606DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
