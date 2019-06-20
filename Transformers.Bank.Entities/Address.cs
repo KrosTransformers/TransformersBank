@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Transformers.Bank.Entities
+﻿namespace Transformers.Bank.Entities
 {
     public class Address: BaseEntity<long>
     {

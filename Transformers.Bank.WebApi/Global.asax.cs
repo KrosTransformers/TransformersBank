@@ -12,6 +12,7 @@ namespace Transformers.Bank.WebApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configure(DiContainerConfig.Register);
         }
     }
 }

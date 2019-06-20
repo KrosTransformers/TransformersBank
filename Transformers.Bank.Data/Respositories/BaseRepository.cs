@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Transformers.Bank.Entities;
 
 namespace Transformers.Bank.Data.Respositories
@@ -13,15 +12,18 @@ namespace Transformers.Bank.Data.Respositories
         where TEntity : class, IEntity<TKey>
     {
         protected DbSet<TEntity> DbSet { get; }
+        protected DbContext DbContext { get; }
 
-        public BaseRepository(DbSet<TEntity> dbSet)
+        public BaseRepository(DbSet<TEntity> dbSet, DbContext dbContext)
         {
             DbSet = dbSet;
+            DbContext = dbContext;
         }
 
         public TEntity Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            DbSet.Add(entity);
+            return entity;
         }
 
         public void Delete(TEntity entity)
@@ -31,7 +33,8 @@ namespace Transformers.Bank.Data.Respositories
 
         public void Delete(TKey id)
         {
-            throw new NotImplementedException();
+            var dbentity = DbSet.Find(id);
+            DbSet.Remove(dbentity);
         }
 
         public List<TEntity> GetAll()
@@ -51,7 +54,23 @@ namespace Transformers.Bank.Data.Respositories
 
         public TEntity Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            if (entity == null) return null;
+
+            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
+            // **************************************************************************
+            // According to the article on https://msdn.microsoft.com/en-us/data/jj592676
+            // attaching is done automatically when `State` is changed to `Modified`
+            // **************************************************************************
+            if (dbEntityEntry.State == EntityState.Detached)
+            {
+                DbSet.Attach(entity);
+            }
+
+
+            // changing state automatically attaches if `Detached`
+            dbEntityEntry.State = EntityState.Modified;
+
+            return entity;
         }
     }
 }

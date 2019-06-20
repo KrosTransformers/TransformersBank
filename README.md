@@ -11,7 +11,9 @@ EF6 with separated entity configuration and EF migrations
 
 4. Add references of Data, Core projects to WebApi project.
 
-5. Add nuget EF6 to WebApi
+5. Add nuget EF6 to WebApi and Core.
+
+6. Add reference of Data to Core.
 
 
 

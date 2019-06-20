@@ -5,7 +5,7 @@ namespace Transformers.Bank.Data.Respositories
 {
     public class AddressRepository : BaseRepository<Address, long>
     {
-        public AddressRepository(DbSet<Address> dbSet) : base(dbSet)
+        public AddressRepository(DbSet<Address> dbSet, DbContext dbContext) : base(dbSet, dbContext)
         {
         }
     }

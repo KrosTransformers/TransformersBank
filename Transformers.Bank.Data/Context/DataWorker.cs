@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using Transformers.Bank.Data.Respositories;
 using Transformers.Bank.Entities;
 
@@ -22,15 +17,15 @@ namespace Transformers.Bank.Data.Context
 
         }
 
-        public AddressRepository Addresses => _addresses ?? (_addresses = new AddressRepository(Set<Address>()));
+        public AddressRepository Addresses => _addresses ?? (_addresses = new AddressRepository(Set<Address>(), this));
 
-        public AccountRepository Accounts => _accounts ?? (_accounts = new AccountRepository(Set<Account>()));
+        public AccountRepository Accounts => _accounts ?? (_accounts = new AccountRepository(Set<Account>(), this));
 
-        public BranchRepository Branches => _branches ?? (_branches = new BranchRepository(Set<Branch>()));
+        public BranchRepository Branches => _branches ?? (_branches = new BranchRepository(Set<Branch>(), this));
 
-        public CustomerRepository Customers => _customers ?? (_customers = new CustomerRepository(Set<Customer>()));
+        public CustomerRepository Customers => _customers ?? (_customers = new CustomerRepository(Set<Customer>(), this));
 
-        public TransactionRepository Transactions => _transactions ?? (_transactions = new TransactionRepository(Set<Transaction>()));
+        public TransactionRepository Transactions => _transactions ?? (_transactions = new TransactionRepository(Set<Transaction>(), this));
 
 
 
